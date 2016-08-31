@@ -9,7 +9,8 @@ export class RacingGame{
 
   startGame(){
     console.log("Game Started");
-    Drawing.drawImage(this.player1carImage,30,30,this.getCanvasContext("game-stage"));
+    Drawing.drawImage(this.player1carImage,30,30,10,10,this.getCanvasContext("game-stage"));
+    Drawing.drawSolidRect(0,0,document.getElementById("game-stage").width,300,this.getCanvasContext("game-stage"));
   }
 
   *getNextGamePrompt(){

@@ -9036,7 +9036,8 @@
 	    key: "startGame",
 	    value: function startGame() {
 	      console.log("Game Started");
-	      _Drawing.Drawing.drawImage(this.player1carImage, 30, 30, this.getCanvasContext("game-stage"));
+	      _Drawing.Drawing.drawImage(this.player1carImage, 30, 30, 10, 10, this.getCanvasContext("game-stage"));
+	      _Drawing.Drawing.drawSolidRect(0, 0, document.getElementById("game-stage").width, 300, this.getCanvasContext("game-stage"));
 	    }
 	  }, {
 	    key: "getNextGamePrompt",
@@ -9112,14 +9113,21 @@
 	
 	  _createClass(Drawing, null, [{
 	    key: 'drawImage',
-	    value: function drawImage(imageLocation, xPos, yPos, target) {
+	    value: function drawImage(imageLocation, xPos, yPos, width, height, target) {
 	      console.log(target);
 	      var imgObj = new Image();
 	      imgObj.src = imageLocation;
+	      imgObj.width = width + 'px';
+	      imgObj.height = height;
 	      imgObj.addEventListener('load', function () {
 	        console.log(imgObj);
 	        target.drawImage(imgObj, xPos, yPos);
 	      });
+	    }
+	  }, {
+	    key: 'drawSolidRect',
+	    value: function drawSolidRect(xPos, yPos, width, height, target) {
+	      target.fillRect(xPos, yPos, width, height);
 	    }
 	  }]);
 

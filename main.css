@@ -16,6 +16,10 @@ h2 {
   text-align: center;
   margin: auto;
 }
+#game-stage{
+  width:100%;
+  height:100vh;
+}
 p {
   background-color: #a7f6fb;
   color: #1c4454;
