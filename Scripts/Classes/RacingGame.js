@@ -36,8 +36,9 @@ export class RacingGame{
     }
   }
 
-  getCanvasContext(){
-
+  getCanvasContext(canvasId){
+    const canvasElement = document.getElementById(canvasId);
+    return canvas.getContext("2d");
   }
 
 }
