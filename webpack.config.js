@@ -2,6 +2,8 @@
 'use strict';
 
 var path = require('path');
+require("babel-core/register");
+require("babel-polyfill");
 
 module.exports = {
     context : __dirname + "/Scripts",
@@ -11,7 +13,7 @@ module.exports = {
         //Webpack will first transpile this code, then if any imports are found will recursively transpile
         //All files imported using the ES6 import keywork
         //SUPER IMPORTANT NOTE: Webpack DOES NOT GENERATE THIS FILE, THIS IS THE FILE YOU CREATE AND WORK ON.
-        SampleModule: './Game/index.js'
+        SampleModule: ['babel-polyfill','./Game/index.js']
     },
     output: {
         //This is the transpiled file that webpack will create.
